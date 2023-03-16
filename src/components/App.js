@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import '../styles/App.css';
 
-function ToDo() {
+function ToDo(props) {
   return (<tr>
     <td>
-      <p>id</p>
+      <p>{props.id}</p>
     </td>
     <td>
       <input />
@@ -25,29 +25,22 @@ function App() {
   }
   ]);
   
-  const reverseTodos = () => {
-    setTodos([...todos].reverse());
+  const reverseHandler = () => {
+    const arr = [];
+    arr[0]=todos[1];
+    arr[1]=todos[0];
+    setTodos(arr);
   };
 
   return (
     <div id="main">
-      <button onClick={ReverseTodos}>Reverse</button>
+      <button onClick={reverseHandler}>Reverse</button>
       <table>
         <tbody>
     
-            {todos.map((todo) => (
-            <tr key={todo.id}>
-              <td>
-                <p>{todo.id}</p>
-              </td>
-              <td>
-                <input />
-              </td>
-              <td>
-                <p>{todo.createdAt}</p>
-              </td>
-            </tr>
-            ))}
+            {todos.map((el) => (
+                return<Todo key = {el.id} id={el.id} createdAt = {el.createdAt} />;
+            }))}
        </tbody>
       </table>
     </div>
