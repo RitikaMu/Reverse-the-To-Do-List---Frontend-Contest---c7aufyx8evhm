@@ -40,7 +40,7 @@ function App() {
     
             {todos.map((el) => {
                 return <Todo key = {el.id} id={el.id} createdAt = {el.createdAt} />;
-            }))}
+            })}
        </tbody>
       </table>
     </div>
