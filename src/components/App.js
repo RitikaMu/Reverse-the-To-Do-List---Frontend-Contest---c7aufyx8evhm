@@ -10,7 +10,7 @@ function ToDo(props) {
       <input />
     </td>
     <td>
-      <p>createdAt</p>
+      <p>{props.createdAt}</p>
     </td>
   </tr>)
 }
