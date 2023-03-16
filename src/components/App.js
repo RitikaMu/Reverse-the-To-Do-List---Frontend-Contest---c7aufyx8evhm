@@ -38,7 +38,7 @@ function App() {
       <table>
         <tbody>
     
-            {todos.map((el) => (
+            {todos.map((el) => {
                 return <Todo key = {el.id} id={el.id} createdAt = {el.createdAt} />;
             }))}
        </tbody>
